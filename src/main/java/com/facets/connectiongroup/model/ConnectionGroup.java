@@ -4,5 +4,6 @@ import lombok.Data;
 
 @Data
 public class ConnectionGroup {
-    private VirtualNode headNode;
+  private String name;
+  private VirtualNode headNode;
 }

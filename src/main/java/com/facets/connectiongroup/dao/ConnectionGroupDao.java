@@ -1,24 +1,21 @@
 package com.facets.connectiongroup.dao;
 
 import com.facets.connectiongroup.model.ConnectionGroup;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
-@Slf4j
 public class ConnectionGroupDao {
-    private final Map<String, ConnectionGroup> nameConnectionGroupMap = new HashMap<>();
+  /** Using a simple in-memory List of objects as a datastore. */
+  private final List<ConnectionGroup> connectionGroups = new ArrayList<>();
 
-    public void add(String name, ConnectionGroup connectionGroup) {
-        nameConnectionGroupMap.put(name, connectionGroup);
-    }
+  public void add(ConnectionGroup connectionGroup) {
+    connectionGroups.add(connectionGroup);
+  }
 
-    public ConnectionGroup getByName(String name) {
-        return nameConnectionGroupMap.get(name);
-    }
-
-
+  public List<ConnectionGroup> getAll() {
+    return connectionGroups;
+  }
 }
