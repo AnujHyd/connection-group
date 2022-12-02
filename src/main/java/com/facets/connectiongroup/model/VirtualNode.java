@@ -1,11 +1,12 @@
 package com.facets.connectiongroup.model;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import java.util.List;
 
 @Data
 public class VirtualNode {
-  private String name;
+  @NonNull private String name;
   private List<VirtualNode> children;
 }

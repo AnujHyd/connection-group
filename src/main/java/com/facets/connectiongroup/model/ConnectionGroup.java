@@ -1,9 +1,10 @@
 package com.facets.connectiongroup.model;
 
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 public class ConnectionGroup {
-  private String name;
-  private VirtualNode headNode;
+  @NonNull private String name;
+  @NonNull private VirtualNode headNode;
 }
